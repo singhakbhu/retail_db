@@ -1,0 +1,7 @@
+1.	In retail_db database, we have 2 tables:  orders and order_items
+
+    For all CLOSED orders, get revenue.
+
+    Steps:
+    Orders.order_id is mapped to order_items.order_item_order_id
+    Sum order_items.order_item_subtotal to get revenue
