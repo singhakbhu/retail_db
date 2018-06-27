@@ -6,9 +6,10 @@
     Orders.order_id is mapped to order_items.order_item_order_id
     Sum order_items.order_item_subtotal to get revenue
 
+
 Solution 1: 
-select o.order_id, t.revenue from 
-orders o join 
-(select order_item_order_id,sum(order_item_subtotal) revenue from order_items group by order_item_order_id)t 
-on t.order_item_order_id=o.order_id 
-where o.order_status="CLOSED" limit 10;
+    select o.order_id, t.revenue from 
+    orders o join 
+    (select order_item_order_id,sum(order_item_subtotal) revenue from order_items group by order_item_order_id)t 
+    on t.order_item_order_id=o.order_id 
+    where o.order_status="CLOSED" limit 10;
